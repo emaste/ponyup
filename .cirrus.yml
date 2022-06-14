@@ -3,7 +3,7 @@
 #
 
 task:
-  only_if: $CIRRUS_PR != ''
+#  only_if: $CIRRUS_PR != ''
 
   freebsd_instance:
     image: freebsd-13-1-release-amd64
@@ -22,7 +22,7 @@ task:
     - gmake test ssl=1.1.x
 
 task:
-  only_if: $CIRRUS_PR != ''
+#  only_if: $CIRRUS_PR != ''
 
   freebsd_instance:
     image: freebsd-13-1-release-amd64
@@ -40,7 +40,7 @@ task:
     - MAKE=gmake .ci-scripts/test-bootstrap.sh
 
 task:
-  only_if: $CIRRUS_PR != ''
+#  only_if: $CIRRUS_PR != ''
 
   macos_instance:
     image: ghcr.io/cirruslabs/macos-monterey-xcode:13.3.1
@@ -59,7 +59,7 @@ task:
 #
 
 task:
-  only_if: $CIRRUS_CRON == "nightly"
+#  only_if: $CIRRUS_CRON == "nightly"
 
   freebsd_instance:
     image: freebsd-13-1-release-amd64
@@ -82,7 +82,7 @@ task:
     - bash .ci-scripts/release/x86-64-unknown-freebsd-13.1-nightly.bash
 
 task:
-  only_if: $CIRRUS_CRON == "nightly"
+#  only_if: $CIRRUS_CRON == "nightly"
 
   macos_instance:
     image: ghcr.io/cirruslabs/macos-monterey-xcode:13.3.1
@@ -107,7 +107,7 @@ task:
 #
 
 task:
-  only_if: $CIRRUS_TAG =~ '^\d+\.\d+\.\d+$'
+#  only_if: $CIRRUS_TAG =~ '^\d+\.\d+\.\d+$'
 
   freebsd_instance:
     image: freebsd-13-1-release-amd64
@@ -130,7 +130,7 @@ task:
     - bash .ci-scripts/release/x86-64-unknown-freebsd-13.1-release.bash
 
 task:
-  only_if: $CIRRUS_TAG =~ '^\d+\.\d+\.\d+$'
+#  only_if: $CIRRUS_TAG =~ '^\d+\.\d+\.\d+$'
 
   macos_instance:
     image: ghcr.io/cirruslabs/macos-monterey-xcode:13.3.1
